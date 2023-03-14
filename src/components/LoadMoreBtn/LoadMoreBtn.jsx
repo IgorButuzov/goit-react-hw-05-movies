@@ -1,13 +1,13 @@
 
 
 import style from '../LoadMoreBtn/LoadMoreBtn.module.css'
-const onBtnClick = () =>{
-    
-}
-const LoadMoreBtn = () => {
+
+const LoadMoreBtn = ({pageNum}) => {
+  // eslint-disable-next-line
+  
     return (
         <div >
-          <button className={style.loadMoreBtn} onClick={onBtnClick}>
+          <button className={style.loadMoreBtn} onClick={() => pageNum(value => value + 1)}>
           Load More
           </button>
         </div>

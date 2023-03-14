@@ -1,22 +1,15 @@
-// import { Routes, Route, NavLink } from "react-router-dom";
+import { useState } from 'react';
 
 import TrendMovies from './TrendMovies/TrendMovies'
 import LoadMoreBtn from './LoadMoreBtn/LoadMoreBtn'
 
 export const App = () => {
-  
+  const [pageNum, setPageNum] = useState(1);
 
   return (
     <div>
-      <TrendMovies />
-      <LoadMoreBtn />
+      <TrendMovies page={pageNum}/>
+      <LoadMoreBtn pageNum={setPageNum}/>
     </div>
   );
 };
-
-
-// getFromApi.trendingMovies().then(data => console.log(data));
-// getFromApi.searchMovies().then(data => console.log(data));
-// getFromApi.movieDetails().then(data => console.log(data));
-// getFromApi.movieCredits().then(data => console.log(data));
-// getFromApi.movieReviews().then(data => console.log(data));
