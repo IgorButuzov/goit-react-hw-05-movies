@@ -3,19 +3,24 @@ import getFromApi from "../fetch";
 
 import Movielist from '../TrendMovies/movielist'
 import css from '../TrendMovies/TrendMovies.module.css'
+import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn'
 
-const TrendMovies = ({page}) => {
-  const [my, setMy] = useState([]);
+const TrendMovies = () => {
+  const [pageNum, setPageNum] = useState(1);
+  const [bestMovies, setBestMovies] = useState([]);
   
   useEffect(()=>{
-    getFromApi.trendingMovies(page)
-  .then(data => setMy(data.results))
-  },[page])
+    getFromApi.trendingMovies(pageNum)
+  .then(data => setBestMovies(data.results))
+  },[pageNum])
 
   return (
+    <>
     <ul className={css.movieBox}>
-      <Movielist my={my}/>
+      <Movielist bestMovies={bestMovies}/>
     </ul>
+    <LoadMoreBtn pageNum={setPageNum}/>
+    </>
   );
 };
 
