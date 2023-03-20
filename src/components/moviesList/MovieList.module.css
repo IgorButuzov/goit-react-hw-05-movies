@@ -1,0 +1,23 @@
+.movieBox{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.movieItem{
+    border: solid 2px transparent;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.movieItem:hover{
+    border: solid 2px orange;
+}
+.movieLink{
+    color: rgb(64, 32, 117);
+}
+.moviePoster{
+    border-radius: 5px;
+    width: 250px;
+}
+.movieDescr{
+    width: 100%;
+}

@@ -1,33 +1,25 @@
-
-import SearchBar from "./SearchBar/SearchBar";
-import TrendMovies from './TrendMovies/TrendMovies'
-import MovieDetails from './MovieDetails/MovieDetails';
-
-import { Routes, Route, NavLink } from 'react-router-dom';
-import styled from "styled-components";
-
-const StyledLink = styled(NavLink)`
-  text-decoration: none;
-  color: black;
-
-  &.active {
-    color: orange;
-  }
-`;
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { Home } from '../pages/home/Home';
+import { Movies } from '../pages/movies/Movies';
+import { Layout } from '../components/layout/Layout';
+import { MoviesDetails } from '../pages/movieDetails/MovieDetails';
+import { Cast } from '../components/cast/Cast';
+import { Reviews } from '../components/reviews/Reviews';
 
 export const App = () => {
   return (
     <>
-    <ul>
-      <li><StyledLink  to='/'>Home</StyledLink></li>
-      <li><StyledLink  to='/movies'>Movies</StyledLink></li>
-    </ul>
-    <SearchBar />
-    <Routes>
-     <Route path='/' element=<div>Home</div>/>
-     <Route path='/movies' element={<TrendMovies/>}/>
-     <Route path='/movies/:movieId' element={<MovieDetails/>}/>
-    </Routes>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="movies" element={<Movies />} />
+          <Route path="movies/:moviesId" element={<MoviesDetails />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="*" element={<Navigate to="/" />} />
+        </Route>
+      </Routes>
     </>
   );
 };

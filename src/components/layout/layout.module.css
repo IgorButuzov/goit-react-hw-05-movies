@@ -1,0 +1,14 @@
+.header {
+  padding: 20px 10px;
+  background-color: gray;
+  outline: gray;
+}
+.linksMain {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+.linksMain:hover {
+  color: orange;
+}

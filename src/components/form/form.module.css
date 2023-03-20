@@ -1,0 +1,23 @@
+.form{
+    margin-left: 40px;
+}
+.formBtn{
+    margin-left: 10px;
+    border-radius: 4px;
+    border-color: transparent;
+    background-color: gray;
+    padding: 5px 10px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+.formBtn:hover{
+    background-color: white;
+    border-color: black;
+    color: orange;
+}
+.formInput{
+    border-radius: 4px;
+    height: 35px;
+    font-size: 24px;
+}
