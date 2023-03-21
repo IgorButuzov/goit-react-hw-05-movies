@@ -10,8 +10,8 @@ export const MoviesDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
   const { moviesId } = useParams();
-  const location = useLocation;
-  const backLink = location?.state?.from ?? '/';
+  const location = useLocation();
+  const backLink = location.state?.from ?? `/movies`;
 
   useEffect(() => {
     if (!moviesId) return;
@@ -38,8 +38,8 @@ export const MoviesDetails = () => {
     <section className={css.section}>
       {movieData && (
         <>
-          <Link className={css.linkGoBack} to={backLink}>
-            GO BACK
+          <Link to={backLink}>
+          <button className={css.linkGoBack}>GO BACK</button>
           </Link>
           <div className={css.movieCard}>
             <img
@@ -73,12 +73,12 @@ export const MoviesDetails = () => {
           <ul className={css.navLinks}>
             <li>
               <Link to="cast" state={{ from: backLink }}>
-                Cast
+              <button className={css.linkGoBack}>Cast</button>
               </Link>
             </li>
             <li>
               <Link to="reviews" state={{ from: backLink }}>
-                Reviews
+              <button className={css.linkGoBack}>Reviews</button>
               </Link>
             </li>
           </ul>

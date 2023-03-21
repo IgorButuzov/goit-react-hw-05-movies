@@ -8,14 +8,28 @@
 .cardListItem {
   list-style-type: none;
 }
-.linkGoBack {
-  margin-bottom: 30px;
-}
 .navLinks {
   display: flex;
   flex-direction: column;
+  padding: 0;
 }
 .imgMain {
+  border-radius: 5px;
   height: 100%;
   width: 200px;
+}
+.linkGoBack{
+  margin: 10px 0;
+  border-radius: 4px;
+  border-color: transparent;
+  background-color: gray;
+  padding: 5px 10px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+.linkGoBack:hover{
+  background-color: white;
+  border-color: gray;
+  color: orange;
 }
